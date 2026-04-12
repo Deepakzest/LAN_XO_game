@@ -1,4 +1,4 @@
-# Hotspot Tic Tac Toe
+# Hotspot Tic Tac Toe#
 
 Offline 3x3 Tic Tac Toe for two Android phones using Flutter and TCP sockets over a WiFi hotspot. No external backend and no internet dependency for gameplay.
 
