@@ -137,7 +137,7 @@ All messages are UTF-8 text and newline separated.
 
 ## Functions and Their Uses
 
-These are the important app functions and what they do in a few words.
+These are the important app functions and what they do in a few words. 
 
 | Function | Use |
 | --- | --- |
@@ -416,5 +416,6 @@ If an interviewer asks about the project, these are the important points to expl
 3. Moves are sent as short text messages.
 4. UI updates locally after each valid move.
 5. Scores persist by opponent IP.
-#   L A N _ X O _ g a m e  
+#   L A N _ X O _ g a m e 
+ 
  
