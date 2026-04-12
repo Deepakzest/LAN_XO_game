@@ -208,3 +208,97 @@ This file contains likely interview questions for the Hotspot Tic Tac Toe projec
 
 61. **Why should we hire you based on this project?**  
     I delivered a complete real-time offline multiplayer app with robust socket handling, clean architecture, user-focused UI, persistence, and successful physical-device validation.
+
+    Q: What is this project about?
+A: A Flutter Tic Tac Toe app that works offline between two Android phones using TCP sockets over a WiFi hotspot.
+
+Q: Why did you use Flutter?
+A: Flutter gives one codebase, fast UI development, and smooth cross-platform app structure.
+
+Q: Why did you choose TCP sockets?
+A: TCP gives reliable real-time communication, so moves arrive in order without losing data.
+
+Q: Why not use internet or backend server?
+A: The requirement is offline play, so the two phones communicate directly over local IP.
+
+Q: How do the two devices connect?
+A: One phone starts a ServerSocket as host, and the other connects using Socket.connect(ip, 4040).
+
+Q: What is the role of the host?
+A: The host acts as server, starts first, uses X, and waits for the client to connect.
+
+Q: What is the role of the client?
+A: The client joins using the host IP, uses O, and plays second.
+
+Q: How is turn management handled?
+A: A boolean isMyTurn blocks invalid taps and allows only the current player to make a move.
+
+Q: How do you prevent double moves?
+A: I ignore taps when isMyTurn is false and also validate that the board cell is empty.
+
+Q: What message format do you use?
+A: Strict UTF-8 strings: MOVE:<index>, RESET, and DISCONNECT.
+
+Q: Why do you send only moves and not board state?
+A: It keeps the protocol simple, reduces sync bugs, and ensures both devices stay aligned by the same move history.
+
+Q: How do you detect win and draw?
+A: I check all 8 winning combinations after every move, and if all cells are filled with no winner, it is a draw.
+
+Q: How do you store score?
+A: I use SharedPreferences and store score with the key format score_<ip>.
+
+Q: Why store score by opponent IP?
+A: It keeps each opponent’s match history separate on the same device.
+
+Q: How do you get the local IP address?
+A: The host device reads its active WiFi interface address and displays that IP for the client to enter.
+
+Q: What happens when the connection fails?
+A: I show a SnackBar message and keep the app safe without crashing.
+
+Q: What happens if the socket disconnects?
+A: The app listens for disconnect events, closes resources cleanly, and notifies the user.
+
+Q: Why do you need SharedPreferences?
+A: It is used for lightweight local persistence of score across app restarts.
+
+Q: What is the main advantage of using a singleton socket service?
+A: It ensures there is only one active connection manager for the whole app.
+
+Q: Which Flutter files are most important in this project?
+A: main.dart, home_screen.dart, game_screen.dart, socket_service.dart, game_state.dart, and constants.dart.
+
+Q: What does socket_service.dart do?
+A: It creates, manages, listens to, and sends socket messages.
+
+Q: What does game_state.dart do?
+A: It stores board logic, winner checks, draw checks, and turn-related game state.
+
+Q: What does home_screen.dart do?
+A: It handles Host Game and Join Game navigation.
+
+Q: What does game_screen.dart do?
+A: It shows the board, handles taps, updates the UI, and displays score and turn state.
+
+Q: What Android permission is needed and why?
+A: INTERNET permission is needed because TCP sockets require network access even on local hotspot communication.
+
+Q: How did you make the UI attractive?
+A: I used a dark theme, neon gradients, glowing board styling, rounded buttons, and tap animations.
+
+Q: What is the hardest part of this project?
+A: Keeping both devices perfectly synced using only move messages and strict turn handling.
+
+Q: How would you explain this project in one line?
+A: It is an offline real-time two-player Flutter game over local WiFi using TCP sockets and persistent scores.
+
+Q: Why is this project interview-worthy?
+A: It shows Flutter UI, socket networking, local persistence, state management, Android permissions, and real device testing.
+
+Q: If interviewer asks what you learned, what should you say?
+A: I learned real-time client-server communication, state synchronization, and building a reliable offline multiplayer app.
+
+If you want, I can now make this into a shorter “top 10 interview questions” version that is easier to memorize.
+
+mgt.clearMarks is not a function
