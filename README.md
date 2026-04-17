@@ -20,6 +20,8 @@ Offline 3x3 Tic Tac Toe for two Android phones using Flutter and TCP sockets ove
 14. Extensions Used
 15. How to Run
 16. Interview Talking Points
+17. Share on LinkedIn
+18. Download and Install (For Users)
 
 ## Problem Statement
 
@@ -386,6 +388,67 @@ build/app/outputs/flutter-apk/app-release.apk
 ```
 
 You can send this APK to both phones and install it manually.
+
+## Share on LinkedIn
+
+Use this checklist so people can understand the project quickly and download it.
+
+1. Upload your code to GitHub.
+2. Keep this repository `README.md` as your project page.
+3. Keep the installable APK in `APK/Hotspot-TicTacToe-v1.0.0.apk`.
+4. Add a 20 to 40 second demo video in your LinkedIn post.
+5. Add these links in your post:
+	1. GitHub repository link
+	2. Direct APK link (GitHub Release asset preferred)
+
+### LinkedIn post template
+
+```text
+Built an offline multiplayer Tic Tac Toe app using Flutter and TCP sockets over hotspot.
+
+Highlights:
+- Works without internet or backend
+- Real-time gameplay across two Android phones
+- Host/client architecture with direct socket communication
+- Score persistence using SharedPreferences
+
+Try it:
+- Source Code: <your-github-repo-link>
+- Download APK: <your-apk-download-link>
+
+Feedback is welcome.
+#flutter #dart #android #networking #mobileappdevelopment #project
+```
+
+## Download and Install (For Users)
+
+If you are sharing this project publicly, these are the exact steps for any user.
+
+### Option A: Download from GitHub (recommended)
+
+1. Open your repository link.
+2. Go to `APK/Hotspot-TicTacToe-v1.0.0.apk` and download it.
+3. Send the APK to your Android phone if downloaded on PC.
+
+### Option B: Download from a GitHub Release (best UX)
+
+1. In GitHub, open `Releases` and create a new release (example tag `v1.0.0`).
+2. Upload `APK/Hotspot-TicTacToe-v1.0.0.apk` as a release asset.
+3. Share the release URL in LinkedIn for one-click APK download.
+
+### Install on Android phone
+
+1. Open the downloaded APK on the phone.
+2. If prompted, enable `Install unknown apps` for the app you used to open the APK.
+3. Tap `Install`.
+4. Open the app and allow local network access if Android asks.
+
+### Play with two users
+
+1. Both phones must be on the same hotspot.
+2. One user taps `Host Game` and shares the shown IP.
+3. Other user taps `Join Game` and enters that IP.
+4. Game starts after successful connection.
 
 ## Interview Talking Points
 
